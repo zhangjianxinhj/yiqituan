@@ -1,0 +1,30 @@
+<div ng-include="'tpl/include/header.html'"></div>
+
+<form class="container" ng-hide="addResult">
+    <div class="form-group">
+        <label for="uname">联系人：</label>
+        <input ng-model="order.user_name"  type="text" class="form-control" id="uname" placeholder="旭旭"/>
+    </div>
+    <div class="form-group">
+        <label>性别：</label>
+        <label class="radio-inline">
+            <input  ng-model="order.sex" type="radio" name="sex" value="1" checked>先生
+        </label>
+        <label class="radio-inline">
+            <input type="radio"  name="sex" value="2">女士
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label for="utel">联系电话：</label>
+        <input ng-model="order.phone" type="tel" class="form-control" id="utel" placeholder="133333333"/>
+    </div>
+    <div class="form-group">
+        <label for="dz">详细地址</label>
+        <textarea ng-model="order.addr" class="form-control"  id="dz" rows="6" placeholder="万寿路西街"></textarea>
+    </div>
+    <button class="btn btn-success btn-block" ng-click="submitOrder()">确定下单</button>
+</form>
+    <p ng-show="addResult">{{addResult}}</p>
+
+<div ng-include="'tpl/include/footer.html'"></div>
